@@ -4,3 +4,21 @@
 //peixes obtidos na pescaria. Informe o total pago pela família
 
 const prompt = require ('prompt-sync') ({sigint: true})
+
+function totalPagar(numeroPessoas, numeroPeixes){
+    const totalEntrada = numeroPessoas * 20
+    
+    if (numeroPessoas >= numeroPeixes) {
+        return totalEntrada
+    } else {
+        const totalPeixes = (numeroPeixes - numeroPessoas) * 12
+        return totalEntrada + totalPeixes
+    }
+}
+
+const numeroPessoas = Number(prompt("Quantas pessoas foram pro Clube de pesca: "))
+const numeroPeixes =  Number(prompt("Quantos peixes foram obtidos na pescaria: "))
+const totalGasto = totalPagar(numeroPessoas, numeroPeixes)
+console.log(`O total a ser pago pela familia é ${totalGasto}`)
+
+
