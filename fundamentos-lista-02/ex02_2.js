@@ -6,16 +6,20 @@
 const prompt = require ('prompt-sync') ({sigint: true})
 
 function calcula(numA, numB){
-    console.log(`A soma de ${numA} e ${numB} é: ${numA + numB}`)
-    console.log(`A subtração de ${numA} e ${numB} é: ${numA - numB}`)
-    console.log(`A multiplicação de ${numA} e ${numB} é: ${numA * numB}`)
-    const divisao = numA / numB
-    if (Number.isInteger(divisao)){
-        console.log(`A divisão de ${numA} e ${numB} é: ${divisao}`)
-    }else {
-        console.log(`A divisão de ${numA} e ${numB} é: ${divisao.toFixed(2)}`)
+    if (numB === 0){
+        console.log("O segundo número não pode ser zero");
+    } else {
+        console.log(`A soma de ${numA} e ${numB} é: ${numA + numB}`)
+        console.log(`A subtração de ${numA} e ${numB} é: ${numA - numB}`)
+        console.log(`A multiplicação de ${numA} e ${numB} é: ${numA * numB}`)
+        const divisao = numA / numB
+        if (Number.isInteger(divisao)){
+            console.log(`A divisão de ${numA} e ${numB} é: ${divisao}`)
+        }else {
+            console.log(`A divisão de ${numA} e ${numB} é: ${divisao.toFixed(2)}`)
+        }
+        console.log(`O resto da divisão de ${numA} e ${numB} é: ${numA % numB}`)
     }
-    console.log(`O resto da divisão de ${numA} e ${numB} é: ${numA % numB}`)
 }
 
 const numA = Number(prompt('Digite o primeiro número: '))
